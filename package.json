@@ -1,0 +1,37 @@
+{
+  "name": "grunt-filerev-usemin",
+  "description": "Replace references to grunt-filerev files.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "homepage": "https://github.com/Lanfei/grunt-filerev-usemin",
+  "author": {
+    "name": "Lanfei",
+    "email": "CooLanfei@163.com",
+    "url": "http://www.clanfei.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Lanfei/grunt-filerev-usemin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Lanfei/grunt-filerev-usemin/issues"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "^0.9.2",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-nodeunit": "^0.3.3",
+    "grunt": "~0.4.5"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.5"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
+}

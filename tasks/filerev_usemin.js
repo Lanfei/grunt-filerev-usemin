@@ -21,19 +21,25 @@ module.exports = function (grunt) {
   grunt.registerMultiTask('filerev_usemin', 'Replace references to grunt-rev files.', function () {
     if (!grunt.filerev || !grunt.filerev.summary) {
       throw new Error('Grunt task `filerev` is required.');
-      return;
     }
 
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
       root: '.'
     });
-    var root = options.root;
     var summary = grunt.filerev.summary;
 
     // Iterate over all specified file groups.
     this.files.forEach(function (file) {
-      // Concat specified files.
+      // Process the root dir.
+      var root = options.root;
+      var orig = file.orig;
+      var cwd = '';
+      if (orig.expand && orig.cwd) {
+        cwd = orig.cwd;
+        root = path.join(cwd, root);
+      }
+      // Replace paths.
       file.src.forEach(function (filepath) {
         // Warn on and remove invalid source files (if nonull was set).
         if (!grunt.file.exists(filepath)) {

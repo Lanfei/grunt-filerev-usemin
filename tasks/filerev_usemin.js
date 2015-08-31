@@ -30,17 +30,18 @@ module.exports = function (grunt) {
     var summary = grunt.filerev.summary;
 
     // Iterate over all specified file groups.
-    this.files.forEach(function (file) {
+    this.files.forEach(function (filePair) {
       // Process the root dir.
       var root = options.root;
-      var orig = file.orig;
+      var orig = filePair.orig;
       var cwd = '';
       if (orig.expand && orig.cwd) {
         cwd = orig.cwd;
         root = path.join(cwd, root);
       }
+
       // Replace paths.
-      file.src.forEach(function (filepath) {
+      filePair.src.forEach(function (filepath) {
         // Warn on and remove invalid source files (if nonull was set).
         if (!grunt.file.exists(filepath)) {
           grunt.log.warn('Source file "' + filepath + '" not found.');
@@ -74,7 +75,7 @@ module.exports = function (grunt) {
           }
         });
 
-        grunt.file.write(filepath, source);
+        grunt.file.write(filePair.dest || filepath, source);
       });
     });
   });

@@ -1,4 +1,4 @@
-# grunt-filerev-usemin
+# grunt-filerev-usemin [![NPM version][npm-image]][npm-url]
 
 > Replace references to grunt-filerev files.
 
@@ -54,3 +54,6 @@ The root path of page files, defaults to empty.
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
+
+[npm-url]: https://npmjs.org/package/grunt-filerev-usemin
+[npm-image]: https://badge.fury.io/js/grunt-filerev-usemin.svg
